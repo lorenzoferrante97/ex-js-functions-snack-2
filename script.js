@@ -7,4 +7,10 @@ function sommaDichiarativa(num1, num2) {
   console.log(`${num1} + ${num2} = `, num1 + num2);
 }
 
+//2. funzione anonima
+const sommaAnonima = function (num1, num2) {
+  console.log(`${num1} + ${num2} = `, num1 + num2);
+};
+
 sommaDichiarativa(2, 4);
+sommaAnonima(3, 3);
