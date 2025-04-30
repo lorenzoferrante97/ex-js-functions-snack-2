@@ -41,3 +41,19 @@ const risSottrazione = eseguiOperazione(10, 10, sottrazione);
 
 console.log('10 * 10 = ', risProdotto);
 console.log('10 - 10 = ', risSottrazione);
+
+// SNACK 4 ----------------------------
+
+// generatore di funzioni
+const creaTimer = (time) => {
+  console.log('Timer partito...');
+
+  return function () {
+    setTimeout(() => {
+      console.log('Tempo Scaduto!');
+    }, time);
+  };
+};
+
+const timer = creaTimer(3000);
+timer();
