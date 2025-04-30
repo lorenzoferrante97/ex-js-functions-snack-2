@@ -61,7 +61,7 @@ timer();
 // SNACK 5 ----------------------------
 
 // stampa messaggio ad ogni intervallo
-const intervalMessage = (message) => {
+const stampaOgniSecondo = (message) => {
   let counter = 0;
 
   return function () {
@@ -74,5 +74,5 @@ const intervalMessage = (message) => {
   };
 };
 
-const showMessage = intervalMessage('Ciao!');
+const showMessage = stampaOgniSecondo('Ciao!');
 showMessage();
