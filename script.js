@@ -57,3 +57,22 @@ const creaTimer = (time) => {
 
 const timer = creaTimer(3000);
 timer();
+
+// SNACK 5 ----------------------------
+
+// stampa messaggio ad ogni intervallo
+const intervalMessage = (message) => {
+  let counter = 0;
+
+  return function () {
+    const interval = setInterval(() => {
+      console.log(message);
+
+      counter++;
+      counter == 5 && clearInterval(interval);
+    }, 1000);
+  };
+};
+
+const showMessage = intervalMessage('Ciao!');
+showMessage();
