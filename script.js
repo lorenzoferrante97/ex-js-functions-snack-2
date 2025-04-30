@@ -120,17 +120,48 @@ console.log('10 - 10 = ', risSottrazione);
 // SNACK 8 ----------------------------
 
 // conto alla rovescia
-const contoAllaRovescia = (n) => {
-  let counter = n;
+// const contoAllaRovescia = (n) => {
+//   let counter = n;
+
+//   return function () {
+//     const interval = setInterval(() => {
+//       console.log(counter);
+//       counter--;
+//       counter == 0 && (clearInterval(interval), console.log('Tempo scaduto!'));
+//     }, 1000);
+//   };
+// };
+
+// const countdown = contoAllaRovescia(5);
+// countdown();
+
+// SNACK 9 ----------------------------
+
+// sequenza di operazioni
+const operazioni = [
+  () => {
+    console.log('Operazione 1');
+  },
+  () => {
+    console.log('Operazione 2');
+  },
+  () => {
+    console.log('Operazione 3');
+  },
+];
+
+const sequenzaOperazioni = (operazioni, time) => {
+  let counter = 0;
 
   return function () {
     const interval = setInterval(() => {
-      console.log(counter);
-      counter--;
-      counter == 0 && (clearInterval(interval), console.log('Tempo scaduto!'));
-    }, 1000);
+      const operazione = operazioni[counter];
+      operazione();
+      counter++;
+      counter == operazioni.length && clearInterval(interval);
+    }, time);
   };
 };
 
-const countdown = contoAllaRovescia(5);
-countdown();
+const sequenza = sequenzaOperazioni(operazioni, 2000);
+sequenza();
