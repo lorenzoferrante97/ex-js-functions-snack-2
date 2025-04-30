@@ -97,22 +97,40 @@ console.log('10 - 10 = ', risSottrazione);
 
 // SNACK 7 ----------------------------
 
-const eseguiEFerma = (message, start, stop) => {
-  let counter = 0;
+// const eseguiEFerma = (message, start, stop) => {
+//   let counter = 0;
+
+//   return function () {
+//     setTimeout(() => {
+//       console.log('Corsa Iniziata!');
+
+//       const interval = setInterval(() => {
+//         console.log(message);
+
+//         counter++;
+//         counter * 1000 == stop && (clearInterval(interval), console.log('Corsa finita!'));
+//       }, 1000);
+//     }, start);
+//   };
+// };
+
+// const corsa = eseguiEFerma('sto correndo...', 3000, 6000);
+// corsa();
+
+// SNACK 8 ----------------------------
+
+// conto alla rovescia
+const contoAllaRovescia = (n) => {
+  let counter = n;
 
   return function () {
-    setTimeout(() => {
-      console.log('Corsa Iniziata!');
-
-      const interval = setInterval(() => {
-        console.log(message);
-
-        counter++;
-        counter * 1000 == stop && (clearInterval(interval), console.log('Corsa finita!'));
-      }, 1000);
-    }, start);
+    const interval = setInterval(() => {
+      console.log(counter);
+      counter--;
+      counter == 0 && (clearInterval(interval), console.log('Tempo scaduto!'));
+    }, 1000);
   };
 };
 
-const corsa = eseguiEFerma('sto correndo...', 3000, 6000);
-corsa();
+const countdown = contoAllaRovescia(5);
+countdown();
