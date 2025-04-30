@@ -77,20 +77,42 @@ console.log('10 - 10 = ', risSottrazione);
 // const showMessage = stampaOgniSecondo('Ciao!');
 // showMessage();
 
-// SNACK 5 ----------------------------
+// SNACK 6 ----------------------------
 
-const creaContatoreAutomatico = (interval) => {
-  let counter = 1;
+// const creaContatoreAutomatico = (interval) => {
+//   let counter = 1;
+
+//   return function () {
+//     const interval = setInterval(() => {
+//       console.log(counter);
+
+//       counter++;
+//       counter == 6 && clearInterval(interval);
+//     }, 1000);
+//   };
+// };
+
+// const showCounter = creaContatoreAutomatico();
+// showCounter();
+
+// SNACK 7 ----------------------------
+
+const eseguiEFerma = (message, start, stop) => {
+  let counter = 0;
 
   return function () {
-    const interval = setInterval(() => {
-      console.log(counter);
+    setTimeout(() => {
+      console.log('Corsa Iniziata!');
 
-      counter++;
-      counter == 6 && clearInterval(interval);
-    }, 1000);
+      const interval = setInterval(() => {
+        console.log(message);
+
+        counter++;
+        counter * 1000 == stop && (clearInterval(interval), console.log('Corsa finita!'));
+      }, 1000);
+    }, start);
   };
 };
 
-const showCounter = creaContatoreAutomatico();
-showCounter();
+const corsa = eseguiEFerma('sto correndo...', 3000, 6000);
+corsa();
