@@ -45,34 +45,52 @@ console.log('10 - 10 = ', risSottrazione);
 // SNACK 4 ----------------------------
 
 // generatore di funzioni
-const creaTimer = (time) => {
-  console.log('Timer partito...');
+// const creaTimer = (time) => {
+//   console.log('Timer partito...');
 
-  return function () {
-    setTimeout(() => {
-      console.log('Tempo Scaduto!');
-    }, time);
-  };
-};
+//   return function () {
+//     setTimeout(() => {
+//       console.log('Tempo Scaduto!');
+//     }, time);
+//   };
+// };
 
-const timer = creaTimer(3000);
-timer();
+// const timer = creaTimer(3000);
+// timer();
 
 // SNACK 5 ----------------------------
 
 // stampa messaggio ad ogni intervallo
-const stampaOgniSecondo = (message) => {
-  let counter = 0;
+// const stampaOgniSecondo = (message) => {
+//   let counter = 0;
+
+//   return function () {
+//     const interval = setInterval(() => {
+//       console.log(message);
+
+//       counter++;
+//       counter == 5 && clearInterval(interval);
+//     }, 1000);
+//   };
+// };
+
+// const showMessage = stampaOgniSecondo('Ciao!');
+// showMessage();
+
+// SNACK 5 ----------------------------
+
+const creaContatoreAutomatico = (interval) => {
+  let counter = 1;
 
   return function () {
     const interval = setInterval(() => {
-      console.log(message);
+      console.log(counter);
 
       counter++;
-      counter == 5 && clearInterval(interval);
+      counter == 6 && clearInterval(interval);
     }, 1000);
   };
 };
 
-const showMessage = stampaOgniSecondo('Ciao!');
-showMessage();
+const showCounter = creaContatoreAutomatico();
+showCounter();
