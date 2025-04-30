@@ -27,3 +27,17 @@ sommaArrow(1, 5);
 const quadrato = (num) => console.log(`quadrato di ${num}: `, num * num);
 
 quadrato(3);
+
+// SNACK 3 ----------------------------
+
+// esegui operazione
+const prodotto = (num1, num2) => num1 * num2;
+const sottrazione = (num1, num2) => num1 - num2;
+
+const eseguiOperazione = (n1, n2, operazione) => operazione(n1, n2);
+
+const risProdotto = eseguiOperazione(10, 10, prodotto);
+const risSottrazione = eseguiOperazione(10, 10, sottrazione);
+
+console.log('10 * 10 = ', risProdotto);
+console.log('10 - 10 = ', risSottrazione);
